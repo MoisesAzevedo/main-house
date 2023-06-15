@@ -13,9 +13,9 @@
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.11",
-    "web-vitals": "^2.1.4",
-    "homepage": "https://moisesazevedo.github.io/main-house"
+    "web-vitals": "^2.1.4"
   },
+  "homepage": "https://moisesazevedo.github.io/main-house/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
