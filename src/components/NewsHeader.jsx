@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Container, Icon, Category, Wrapper } from "./NewsHeaderStyled";
+import {
+  Container,
+  Icon,
+  Category,
+  Wrapper,
+  NoStyledElement
+} from "./NewsHeaderStyled";
 import favicon from "../assets/img/favicon.ico";
 
 let category = localStorage.getItem("category");
@@ -31,7 +37,7 @@ const NewsHeader = () => {
           Noticias Diversas
         </Category>
 
-        <p> •</p>
+        <NoStyledElement>•</NoStyledElement>
 
         <Category
           onClick={() => {
@@ -44,7 +50,7 @@ const NewsHeader = () => {
           Technologia
         </Category>
 
-        <p> •</p>
+        <NoStyledElement> •</NoStyledElement>
 
         <Category
           onClick={() => {
@@ -56,7 +62,7 @@ const NewsHeader = () => {
           Programação
         </Category>
 
-        <p> •</p>
+        <NoStyledElement> •</NoStyledElement>
 
         <Category
           onClick={() => {
@@ -68,7 +74,7 @@ const NewsHeader = () => {
           Ciencia
         </Category>
 
-        <p> •</p>
+        <NoStyledElement> •</NoStyledElement>
 
         <Category
           onClick={() => {
@@ -80,7 +86,7 @@ const NewsHeader = () => {
           Dinheiro
         </Category>
 
-        <p> •</p>
+        <NoStyledElement> •</NoStyledElement>
 
         <Category
           onClick={() => {
@@ -92,7 +98,7 @@ const NewsHeader = () => {
           Artes
         </Category>
 
-        <p> •</p>
+        <NoStyledElement> •</NoStyledElement>
 
         <Category
           onClick={() => {

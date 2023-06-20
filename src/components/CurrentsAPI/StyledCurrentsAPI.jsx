@@ -3,7 +3,6 @@ import { getRandomColor, getRandomColor2 } from "./getRandomColor";
 
 export const Wrapper = styled.div`
   align-items: center;
-  jusfy-content: center;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -32,6 +31,13 @@ export const Container = styled.div`
   );
   border-radius: 20px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+  }
 `;
 
 //images of news
@@ -50,12 +56,10 @@ export const ElementImage = styled.img`
 
 //box of title and texts
 export const Letter = styled.div`
-  padding: 5px; 
+  padding: 5px;
   width: 90%;
-  height:90%
+  height: 90%;
   margin-left: 10px;
-  
-
 `;
 
 export const Description = styled.p`

@@ -38,4 +38,13 @@ export const Icon = styled.img`
 export const Category = styled.p`
   margin-right: 15px;
   margin-left: 15px;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`;
+
+export const NoStyledElement = styled.div`
+  cursor: default;
 `;
