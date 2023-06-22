@@ -62,10 +62,6 @@ const CurrentsAPI = () => {
             /* function to format published */
             findHourDate(hourDate, indice);
 
-            /* console.log("test dateFormat" + indice);
-            console.log(hourDate); */
-            console.log(dateFormat);
-
             return (
               <Container>
                 <Image src={all.image} onClick={all.url} />

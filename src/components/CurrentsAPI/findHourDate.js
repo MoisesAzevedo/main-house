@@ -19,8 +19,8 @@ export const findHourDate = (dates, indice) => {
     }
 
     dateFormatting += dateHourNoFormat.charAt(indexDateNumber);
-    console.log("dateFormatting");
-    console.log(dateFormatting);
+    /* console.log("dateFormatting");
+    console.log(dateFormatting); */
   }
 
   //envia a data pronta para a variável exportada.

@@ -12,6 +12,47 @@ let category = localStorage.getItem("category");
 //string que vai recebero valor da categoria
 let categoryNotDefined = "";
 
+var categories = [
+  "all",
+  "technology",
+  "programming",
+  "science",
+  "finance",
+  "art",
+  "gadgets"
+];
+var categoriesSelector = [
+  "Noticias Divesas",
+  "Tecnologia",
+  "Programação",
+  "Ciência",
+  "Dinheiro",
+  "Artes",
+  "Gadgets"
+];
+
+//Selector of category
+var categoryJSX = [];
+
+//add selectors
+for (let i in categories) {
+  console.log("Categories");
+  console.log(categories[i]);
+
+  categoryJSX.push(
+    <Category
+      onClick={() => {
+        category = categories[i];
+
+        localStorage.setItem("category", JSON.stringify(category));
+        window.location.reload(true);
+      }}
+    >
+      {categoriesSelector[i]}
+    </Category>
+  );
+}
+
 if (category != null) {
   categoryNotDefined = JSON.parse(category);
 } else {
@@ -26,89 +67,8 @@ const NewsHeader = () => {
     <Wrapper>
       <Container>
         <Icon src={favicon}></Icon>
-        <Category
-          onClick={() => {
-            category = "general";
-            console.log(category);
 
-            localStorage.setItem("category", JSON.stringify(category));
-          }}
-        >
-          Noticias Diversas
-        </Category>
-
-        <NoStyledElement>•</NoStyledElement>
-
-        <Category
-          onClick={() => {
-            category = "technology";
-            console.log(category);
-
-            localStorage.setItem("category", JSON.stringify(category));
-          }}
-        >
-          Technologia
-        </Category>
-
-        <NoStyledElement> •</NoStyledElement>
-
-        <Category
-          onClick={() => {
-            category = "programming";
-            console.log(category);
-            localStorage.setItem("category", JSON.stringify(category));
-          }}
-        >
-          Programação
-        </Category>
-
-        <NoStyledElement> •</NoStyledElement>
-
-        <Category
-          onClick={() => {
-            category = "science";
-            console.log(category);
-            localStorage.setItem("category", JSON.stringify(category));
-          }}
-        >
-          Ciencia
-        </Category>
-
-        <NoStyledElement> •</NoStyledElement>
-
-        <Category
-          onClick={() => {
-            category = "finance";
-            console.log(category);
-            localStorage.setItem("category", JSON.stringify(category));
-          }}
-        >
-          Dinheiro
-        </Category>
-
-        <NoStyledElement> •</NoStyledElement>
-
-        <Category
-          onClick={() => {
-            category = "art";
-            console.log(category);
-            localStorage.setItem("category", JSON.stringify(category));
-          }}
-        >
-          Artes
-        </Category>
-
-        <NoStyledElement> •</NoStyledElement>
-
-        <Category
-          onClick={() => {
-            category = "gadgets";
-            console.log(category);
-            localStorage.setItem("category", JSON.stringify(category));
-          }}
-        >
-          Gadgets
-        </Category>
+        {categoryJSX}
       </Container>
     </Wrapper>
   );
