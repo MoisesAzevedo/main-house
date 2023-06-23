@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { desktopDisplay, tabletDisplay } from "./CurrentsAPI/StyledCurrentsAPI";
 
 export const Wrapper = styled.div`
   background: rgb(154, 188, 200);
@@ -26,6 +27,7 @@ export const Container = styled.div`
   width: 80%;
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
 export const Icon = styled.img`
@@ -33,6 +35,15 @@ export const Icon = styled.img`
   height: fit-content;
   margin-right: 20px;
   margin-left: 0px;
+`;
+
+export const BurgerMenu = styled.p`
+  right: 0;
+  font-size: 35px;
+  display: none;
+  @media screen and (max-width: ${tabletDisplay}) {
+    display: block;
+  }
 `;
 
 export const Category = styled.p`
@@ -43,8 +54,18 @@ export const Category = styled.p`
     text-decoration: underline;
     cursor: pointer;
   }
+
+  @media screen and (max-width: ${desktopDisplay[0]}) {
+    font-size: 13px;
+  }
+  @media screen and (max-width: ${tabletDisplay}) {
+    display: none;
+  }
 `;
 
 export const NoStyledElement = styled.div`
   cursor: default;
+  @media screen and (max-width: ${tabletDisplay}) {
+    display: none;
+  }
 `;

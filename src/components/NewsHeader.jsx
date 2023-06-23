@@ -4,7 +4,8 @@ import {
   Icon,
   Category,
   Wrapper,
-  NoStyledElement
+  NoStyledElement,
+  BurgerMenu
 } from "./NewsHeaderStyled";
 import favicon from "../assets/img/favicon.ico";
 
@@ -19,7 +20,8 @@ var categories = [
   "science",
   "finance",
   "art",
-  "gadgets"
+  "gadgets",
+  "world"
 ];
 var categoriesSelector = [
   "Noticias Divesas",
@@ -28,7 +30,8 @@ var categoriesSelector = [
   "Ciência",
   "Dinheiro",
   "Artes",
-  "Gadgets"
+  "Gadgets",
+  "Mundo"
 ];
 
 //Selector of category
@@ -36,21 +39,41 @@ var categoryJSX = [];
 
 //add selectors
 for (let i in categories) {
-  console.log("Categories");
-  console.log(categories[i]);
+  let indexSubtracted = categories.length - 1;
 
-  categoryJSX.push(
-    <Category
-      onClick={() => {
-        category = categories[i];
+  //add value to categoryJSX
+  if (i < indexSubtracted) {
+    categoryJSX.push(
+      <>
+        <Category
+          onClick={() => {
+            category = categories[i];
 
-        localStorage.setItem("category", JSON.stringify(category));
-        window.location.reload(true);
-      }}
-    >
-      {categoriesSelector[i]}
-    </Category>
-  );
+            localStorage.setItem("category", JSON.stringify(category));
+            window.location.reload(true);
+          }}
+        >
+          {categoriesSelector[i]}
+        </Category>
+        <NoStyledElement>•</NoStyledElement>
+      </>
+    );
+  } else {
+    categoryJSX.push(
+      <>
+        <Category
+          onClick={() => {
+            category = categories[i];
+
+            localStorage.setItem("category", JSON.stringify(category));
+            window.location.reload(true);
+          }}
+        >
+          {categoriesSelector[i]}
+        </Category>
+      </>
+    );
+  }
 }
 
 if (category != null) {
@@ -67,8 +90,8 @@ const NewsHeader = () => {
     <Wrapper>
       <Container>
         <Icon src={favicon}></Icon>
-
         {categoryJSX}
+        <BurgerMenu>☰</BurgerMenu>
       </Container>
     </Wrapper>
   );

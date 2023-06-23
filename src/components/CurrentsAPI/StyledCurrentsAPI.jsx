@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { getRandomColor, getRandomColor2 } from "./getRandomColor";
 
+export const desktopDisplay = ["1291px", "1440px"];
+export const tabletDisplay = ["1024px"];
+export const mobileDisplay = ["760px"];
+
 export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
@@ -17,6 +21,16 @@ export const News = styled.div`
   color: black;
   width: 80%;
   margin-top: 110px;
+
+  @media screen and (max-width: ${desktopDisplay[1]}) {
+    grid-template-rows: 450px 450px 450px 450px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: ${mobileDisplay}) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 //the article
