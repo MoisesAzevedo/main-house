@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { getRandomColor, getRandomColor2 } from "./getRandomColor";
 
 export const desktopDisplay = ["1291px", "1440px"];
-export const tabletDisplay = ["1024px"];
-export const mobileDisplay = ["800px"];
+export const tabletDisplay = ["1280px"];
+export const mobileDisplay = ["1024px"];
 
 export const Wrapper = styled.div`
   align-items: center;
