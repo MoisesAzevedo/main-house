@@ -39,6 +39,7 @@ export const Icon = styled.img`
 
 export const BurgerMenu = styled.p`
   right: 0;
+  position: absolute;
   font-size: 35px;
   display: none;
   @media screen and (max-width: ${tabletDisplay}) {
